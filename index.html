@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kholuva — Cold Pressed Mustard Oil</title>
+  <meta name="description" content="Kholuva cold pressed mustard oil. Shop black and yellow mustard oil online.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Kholuva<span>®</span></div>
+  <nav><a href="#products">Products</a><a href="#story">Our Oil</a><a href="#trust">Quality</a></nav>
+  <button class="cart-btn" onclick="openCart()">Cart <b id="cartCount">0</b></button>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">COLD PRESSED • MUSTARD OIL</p>
+    <h1>Traditional mustard oil.<br><em>Made for everyday cooking.</em></h1>
+    <p class="hero-copy">Kholuva brings carefully pressed black and yellow mustard oil to your kitchen, with batch-led quality information and doorstep delivery.</p>
+    <a class="primary" href="#products">Shop oil</a>
+  </div>
+  <div class="hero-card">
+    <div class="bottle">KHOLUVA<small>Cold Pressed<br>Mustard Oil</small></div>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="section-head"><div><p class="eyebrow">SHOP</p><h2>Choose your mustard</h2></div><p>Secure checkout • COD & online payment</p></div>
+  <div class="products">
+    <article class="product">
+      <div class="pack black"><span>KHOLUVA</span><small>BLACK MUSTARD OIL<br>1000 ml</small></div>
+      <h3>Black Mustard Oil — 1 L</h3><p>Cold pressed mustard oil</p>
+      <div class="price">₹<span>299</span></div>
+      <button class="primary full" onclick="addToCart('KO-BLACK-1L','Black Mustard Oil — 1 L',299,1)">Add to cart</button>
+    </article>
+    <article class="product">
+      <div class="pack yellow"><span>KHOLUVA</span><small>YELLOW MUSTARD OIL<br>1000 ml</small></div>
+      <h3>Yellow Mustard Oil — 1 L</h3><p>Cold pressed mustard oil</p>
+      <div class="price">₹<span>319</span></div>
+      <button class="primary full" onclick="addToCart('KO-YELLOW-1L','Yellow Mustard Oil — 1 L',319,1)">Add to cart</button>
+    </article>
+  </div>
+</section>
+
+<section id="story" class="dark section">
+  <p class="eyebrow">KHOLUVA</p><h2>From seed to bottle, with fewer shortcuts.</h2>
+  <p class="wide">Small-batch cold pressing, clean handling and batch information are built into the brand experience. Add your actual lab-report and FSSAI details before launch.</p>
+</section>
+
+<section id="trust" class="section trust">
+  <div><b>01</b><h3>Batch information</h3><p>Publish batch and lab-test information for customers.</p></div>
+  <div><b>02</b><h3>Doorstep delivery</h3><p>Shipping can be connected to Shiprocket after account setup.</p></div>
+  <div><b>03</b><h3>Secure checkout</h3><p>Razorpay online payment plus Cash on Delivery.</p></div>
+</section>
+</main>
+
+<div id="cartDrawer" class="drawer">
+  <div class="drawer-inner">
+    <button class="close" onclick="closeCart()">×</button>
+    <h2>Your cart</h2><div id="cartItems"></div>
+    <div class="total"><span>Subtotal</span><b id="cartTotal">₹0</b></div>
+    <button class="primary full" onclick="checkout()">Continue to checkout</button>
+  </div>
+</div>
+
+<div id="checkoutModal" class="modal">
+ <div class="modal-card">
+  <button class="close" onclick="closeCheckout()">×</button>
+  <h2>Delivery details</h2>
+  <form id="checkoutForm">
+   <input name="name" placeholder="Full name" required>
+   <input name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+   <input name="email" type="email" placeholder="Email (optional)">
+   <textarea name="address" placeholder="House / street / locality" required></textarea>
+   <div class="grid2"><input name="city" placeholder="City" required><input name="state" placeholder="State" required></div>
+   <input id="pincode" name="pincode" placeholder="6-digit pincode" pattern="[0-9]{6}" required>
+   <div class="shiprow"><span>Shipping</span><b id="shipping">Enter pincode</b></div>
+   <div class="shiprow total"><span>Total</span><b id="finalTotal">₹0</b></div>
+   <div class="payopts"><label><input type="radio" name="payment" value="COD" checked> Cash on Delivery</label><label><input type="radio" name="payment" value="Prepaid"> Online payment</label></div>
+   <button class="primary full" type="submit">Place order</button>
+   <p class="fine">By ordering you agree to Kholuva's terms, shipping and return policy.</p>
+  </form>
+ </div>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
